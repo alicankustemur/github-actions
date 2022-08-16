@@ -11,4 +11,4 @@ jobs:
         - 80
     steps:
       - name: Check the server
-        run: wget localhost
+        run: curl localhost
