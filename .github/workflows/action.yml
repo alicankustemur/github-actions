@@ -1,11 +1,17 @@
-name: Hello World Container Github Actions Demo
-on: [push]
+name: CI
+on:
+  push:
+    branches: [ main ]
 jobs:
-  run-hello-world-container:
+  container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: hello-world
+      image: node:14.16
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      options: --cpus 1
     steps:
-    - name: Run echo
-      run: |
-        echo "hello world!"
+      - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
