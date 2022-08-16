@@ -6,7 +6,7 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: nginx
+      image: nginx:stable-alpine
       ports:
         - 80:80
     steps:
