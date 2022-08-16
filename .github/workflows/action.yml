@@ -11,4 +11,4 @@ jobs:
         - 80:80
     steps:
       - name: Check the server
-        run: curl $(netstat -tulpn | grep LISTEN | sed -n '1p' | awk '{print $4}')
+        run: curl $(netstat -tulpn | grep LISTEN | awk '{print $4}')
