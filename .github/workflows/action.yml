@@ -12,5 +12,7 @@ jobs:
     steps:
       - name: Wait little bit
         run: sleep 5
+      - name: Check the ports
+        run: netstat -tulpn | grep LISTEN | awk '{print $4}'
       - name: Check the server
         run: curl $(netstat -tulpn | grep LISTEN | awk '{print $4}')
