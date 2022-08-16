@@ -11,4 +11,4 @@ jobs:
         - 80
     steps:
       - name: Check the server
-        run: curl localhost
+        run: echo $HOST
