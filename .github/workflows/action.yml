@@ -2,7 +2,7 @@ name: Hello World Container Github Actions Demo
 on: [push]
 jobs:
   run-hello-world-container:
-    runs-on: github-action
+    runs-on: ubuntu-latest
     container:
       image: hello-world
     steps:
