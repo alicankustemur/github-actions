@@ -5,3 +5,7 @@ jobs:
     runs-on: github-action
     container:
       image: hello-world
+    steps:
+    - name: Run echo
+      run: |
+        echo "hello world!"
